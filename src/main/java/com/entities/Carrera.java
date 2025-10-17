@@ -1,4 +1,4 @@
-package com.arquitecturas.tp1.entities;
+package com.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

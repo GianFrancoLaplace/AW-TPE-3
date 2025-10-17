@@ -1,5 +1,5 @@
 // com.arquitecturas.tp1.dto/ReporteCarreraDTO.java
-package com.arquitecturas.tp1.dto;
+package com.dto;
 
 public class ReporteCarreraDTO {
     private String nombreCarrera;

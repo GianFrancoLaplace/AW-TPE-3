@@ -1,6 +1,6 @@
-package com.arquitecturas.tp1.repository;
+package com.repository;
 
-import com.arquitecturas.tp1.dto.ReporteCarrerasXInscriptosDTO;
+import com.dto.ReporteCarrerasXInscriptosDTO;
 
 import java.util.*;
 

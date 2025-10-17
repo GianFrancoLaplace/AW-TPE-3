@@ -1,4 +1,4 @@
-package com.arquitecturas.tp1.dto;
+package com.dto;
 
 import lombok.Getter;
 

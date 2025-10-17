@@ -1,6 +1,6 @@
-package com.arquitecturas.tp1.dto;
+package com.dto;
 
-import com.arquitecturas.tp1.entities.Estudiante;
+import com.entities.Estudiante;
 import lombok.*;
 
 @Getter
