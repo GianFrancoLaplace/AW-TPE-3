@@ -38,4 +38,8 @@ public class EstudianteControllerJpa {
         return test.buscarEstudiantesPorGenero(genero);
 
     }
+    @GetMapping("/carrera/{carrera}/ciudad/{ciudad}")
+    public List<EstudianteDTO> buscarEstudiantesPorCarreraYCiudad(@PathVariable String carrera,@PathVariable String ciudad) {
+        return test.buscarEstudiantesPorCarreraYCiudad(carrera,ciudad);
+    }
 }
