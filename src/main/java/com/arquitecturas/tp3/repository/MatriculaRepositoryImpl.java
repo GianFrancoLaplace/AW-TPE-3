@@ -1,17 +1,17 @@
-package com.repository;
+package com.arquitecturas.tp3.repository;
 
 import com.opencsv.CSVReader;
-import com.dto.CarreraDTO;
-import com.dto.EstudianteDTO;
-import com.entities.Carrera;
-import com.entities.Estudiante;
-import com.entities.Matricula;
+import com.arquitecturas.tp3.dto.CarreraDTO;
+import com.arquitecturas.tp3.dto.EstudianteDTO;
+import com.arquitecturas.tp3.entities.Carrera;
+import com.arquitecturas.tp3.entities.Estudiante;
+import com.arquitecturas.tp3.entities.Matricula;
 import factory.JPAUtil;
 import jakarta.persistence.EntityManager;
 
 import java.io.FileReader;
 
-public class MatriculaRepositoryImpl implements com.repository.MatriculaRepository {
+public class MatriculaRepositoryImpl implements com.arquitecturas.tp3.repository.MatriculaRepository {
     @Override
     public void insertarDesdeCSV(String rutaArchivo) {
         EntityManager em = JPAUtil.getEntityManager();

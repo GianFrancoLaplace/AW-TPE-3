@@ -1,6 +1,6 @@
-package com.repository;
+package com.arquitecturas.tp3.repository;
 
-import com.dto.EstudianteDTO;
+import com.arquitecturas.tp3.dto.EstudianteDTO;
 import java.util.*;
 
 public interface EstudianteRepository {

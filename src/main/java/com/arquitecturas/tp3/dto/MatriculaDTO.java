@@ -1,7 +1,7 @@
-package com.dto;
+package com.arquitecturas.tp3.dto;
 
-import com.entities.Carrera;
-import com.entities.Estudiante;
+import com.arquitecturas.tp3.entities.Carrera;
+import com.arquitecturas.tp3.entities.Estudiante;
 import lombok.*;
 
 @Getter

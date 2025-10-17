@@ -1,6 +1,6 @@
-package com.repository;
+package com.arquitecturas.tp3.repository;
 
-import com.dto.*;
+import com.arquitecturas.tp3.dto.*;
 
 public interface MatriculaRepository {
     void insertarDesdeCSV(String rutaArchivo);

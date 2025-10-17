@@ -1,8 +1,8 @@
-package com.controller;
+package com.arquitecturas.tp3.controller;
 
-import com.arquitecturas.tp1.Test;
-import com.entities.Estudiante;
-import com.arquitecturas.tp1.dto.EstudianteDTO;
+import com.arquitecturas.tp3.repository.EstudianteRepositoryImpl;
+import com.arquitecturas.tp3.entities.Estudiante;
+import com.arquitecturas.tp3.dto.EstudianteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +16,9 @@ import java.util.List;
 
 public class EstudianteControllerJpa {
     @Autowired
-    private final Test test;
+    private final EstudianteRepositoryImpl test;
 
-    public EstudianteControllerJpa(Test test) {
+    public EstudianteControllerJpa(EstudianteRepositoryImpl test) {
         this.test = test;
     }
 

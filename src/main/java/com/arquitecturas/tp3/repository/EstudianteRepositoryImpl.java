@@ -1,7 +1,7 @@
-package com.repository;
+package com.arquitecturas.tp3.repository;
 
-import com.entities.Estudiante;
-import com.dto.EstudianteDTO;
+import com.arquitecturas.tp3.entities.Estudiante;
+import com.arquitecturas.tp3.dto.EstudianteDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

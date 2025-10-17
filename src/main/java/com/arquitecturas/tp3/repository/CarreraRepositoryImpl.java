@@ -1,10 +1,10 @@
-package com.repository;
+package com.arquitecturas.tp3.repository;
 
 import com.opencsv.CSVReader;
 
-import com.dto.ReporteCarrerasXInscriptosDTO;
-import com.dto.ReporteCarreraDTO;
-import com.entities.Carrera;
+import com.arquitecturas.tp3.dto.ReporteCarrerasXInscriptosDTO;
+import com.arquitecturas.tp3.dto.ReporteCarreraDTO;
+import com.arquitecturas.tp3.entities.Carrera;
 import factory.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
