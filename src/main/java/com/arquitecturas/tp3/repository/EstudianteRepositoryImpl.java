@@ -15,7 +15,7 @@ public interface EstudianteRepositoryImpl extends JpaRepository<Estudiante, Long
     List<Estudiante> findByEdad(@Param("edad") int edad);
 
     @Query("""
-    SELECT new com.dto.EstudianteDTO(
+    SELECT new com.arquitecturas.tp3.dto.EstudianteDTO(
         e.id,
         e.nombre,
         e.apellido,
