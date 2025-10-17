@@ -28,7 +28,8 @@ public class EstudianteControllerJpa {
     }
 
     @GetMapping("edad/{edad}")
-    public Iterable<Estudiante> estudiantes(@PathVariable int edad) {
+    public List<EstudianteDTO> estudiantes(@PathVariable int edad) {
+
         return test.findByEdad(edad);
     }
 
@@ -36,5 +37,9 @@ public class EstudianteControllerJpa {
     public List<EstudianteDTO> estudianteXGenero(@PathVariable String genero) {
         return test.buscarEstudiantesPorGenero(genero);
 
+    }
+    @GetMapping("/carrera/{carrera}/ciudad/{ciudad}")
+    public List<EstudianteDTO> buscarEstudiantesPorCarreraYCiudad(@PathVariable String carrera,@PathVariable String ciudad) {
+        return test.buscarEstudiantesPorCarreraYCiudad(carrera,ciudad);
     }
 }
