@@ -11,8 +11,21 @@ import java.util.List;
 @Repository
 public interface EstudianteRepositoryImpl extends JpaRepository<Estudiante, Long> {
 
-    @Query("SELECT e FROM Estudiante e WHERE e.edad = :edad")
-    List<Estudiante> findByEdad(@Param("edad") int edad);
+    @Query("""
+    SELECT new com.arquitecturas.tp3.dto.EstudianteDTO(
+        e.id,
+        e.nombre,
+        e.apellido,
+        e.edad,
+        e.genero,
+        e.ciudad,
+        e.documento,
+        e.nroLibreta
+    )
+    FROM Estudiante e
+    WHERE e.edad = :edad
+""")
+    List<EstudianteDTO> findByEdad(@Param("edad") int edad);
 
     @Query("""
     SELECT new com.arquitecturas.tp3.dto.EstudianteDTO(

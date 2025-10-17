@@ -28,7 +28,8 @@ public class EstudianteControllerJpa {
     }
 
     @GetMapping("edad/{edad}")
-    public Iterable<Estudiante> estudiantes(@PathVariable int edad) {
+    public List<EstudianteDTO> estudiantes(@PathVariable int edad) {
+
         return test.findByEdad(edad);
     }
 
