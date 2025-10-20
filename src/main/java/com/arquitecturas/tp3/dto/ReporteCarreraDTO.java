@@ -1,16 +1,19 @@
-// com.arquitecturas.tp1.dto/ReporteCarreraDTO.java
 package com.arquitecturas.tp3.dto;
 
+import lombok.Getter;
+import lombok.AllArgsConstructor;
+
+@Getter
+@AllArgsConstructor
 public class ReporteCarreraDTO {
     private String nombreCarrera;
     private long inscriptos;
     private long egresados;
-    private int inscripcion; // Usamos int para que coincida con la entidad
+    private int inscripcion;
 
-    // Constructor que usará JPQL
-    public ReporteCarreraDTO(String nombreCarrera, long inscriptos, Long egresados, int inscripcion) {
+    public ReporteCarreraDTO(String nombreCarrera, Long inscriptos, Long egresados, int inscripcion) {
         this.nombreCarrera = nombreCarrera;
-        this.inscriptos = inscriptos;
+        this.inscriptos = (inscriptos != null) ? inscriptos : 0L;
         this.egresados = (egresados != null) ? egresados : 0L;
         this.inscripcion = inscripcion;
     }
