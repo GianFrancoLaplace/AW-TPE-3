@@ -29,7 +29,7 @@ public class EstudianteService {
         return estudianteRepository.buscarEstudiantesPorGenero(genero);
     }
 
-    public List<EstudianteDTO> buscarEstudiantesPorCarreraYCiudad(String carrera, String ciudad) {
+    public List<Estudiante> buscarEstudiantesPorCarreraYCiudad(String carrera, String ciudad) {
         return estudianteRepository.buscarEstudiantesPorCarreraYCiudad(carrera, ciudad);
     }
 
