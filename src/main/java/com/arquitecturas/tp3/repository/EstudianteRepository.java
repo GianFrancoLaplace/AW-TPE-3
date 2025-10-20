@@ -16,8 +16,10 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
     @Query("SELECT e FROM Estudiante e WHERE e.genero = :genero")
     List<Estudiante> buscarEstudiantesPorGenero(@Param("genero") String genero);
 
-    @Query("SELECT m FROM Matricula m JOIN Estudiante e ON m.estudiante.id = e.id WHERE e.ciudad = :ciudad AND m.carrera.nombre = :carrera")
-    List<EstudianteDTO> buscarEstudiantesPorCarreraYCiudad (@Param("carrera") String carrera, @Param("ciudad") String ciudad);
+    @Query("SELECT e " +
+            "FROM Estudiante e, IN (e.matriculas) m " +
+            "WHERE m.carrera.nombre = :carrera AND e.ciudad = :ciudad")
+    List<Estudiante> buscarEstudiantesPorCarreraYCiudad (@Param("carrera") String carrera, @Param("ciudad") String ciudad);
 
     @Query("SELECT e FROM Estudiante e ORDER BY e.edad")
     List<Estudiante> buscarEstudiantesOrderPorEdad();

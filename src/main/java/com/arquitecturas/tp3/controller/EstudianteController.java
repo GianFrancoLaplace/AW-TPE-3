@@ -48,8 +48,8 @@ public class EstudianteController {
     }
 
     @GetMapping("/carrera/{carrera}/ciudad/{ciudad}")
-    public ResponseEntity<List<EstudianteDTO>> buscarEstudiantesPorCarreraYCiudad(@PathVariable String carrera, @PathVariable String ciudad) {
-        List<EstudianteDTO> estudiantes = estudianteService.buscarEstudiantesPorCarreraYCiudad(carrera, ciudad);
+    public ResponseEntity<List<Estudiante>> buscarEstudiantesPorCarreraYCiudad(@PathVariable String carrera, @PathVariable String ciudad) {
+        List<Estudiante> estudiantes = estudianteService.buscarEstudiantesPorCarreraYCiudad(carrera, ciudad);
         if(estudiantes.isEmpty()){
             return ResponseEntity.noContent().build();
         }
