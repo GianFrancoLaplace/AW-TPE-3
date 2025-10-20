@@ -1,26 +1,22 @@
 package com.arquitecturas.tp3.controller;
 
-import com.arquitecturas.tp3.entities.Estudiante;
 import com.arquitecturas.tp3.dto.EstudianteDTO;
-import com.arquitecturas.tp3.repository.EstudianteRepository;
+import com.arquitecturas.tp3.entities.Estudiante;
 import com.arquitecturas.tp3.service.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/estudiantes")
 
-public class EstudianteControllerJpa {
+public class EstudianteController {
     @Autowired
     private final EstudianteService estudianteService;
 
-    public EstudianteControllerJpa(EstudianteService estudianteService) {
+    public EstudianteController(EstudianteService estudianteService) {
         this.estudianteService = estudianteService;
     }
 
@@ -34,7 +30,7 @@ public class EstudianteControllerJpa {
     }
 
     @GetMapping("/edad/{edad}")
-    public ResponseEntity<List<Estudiante>> estudiantes(@PathVariable int edad) {
+    public ResponseEntity<List<Estudiante>> studientsByAge(@PathVariable int edad) {
         List<Estudiante> estudiantes = estudianteService.buscarEstudiantesPorEdad(edad);
         if(estudiantes.isEmpty()){
             return ResponseEntity.noContent().build();
@@ -52,8 +48,8 @@ public class EstudianteControllerJpa {
     }
 
     @GetMapping("/carrera/{carrera}/ciudad/{ciudad}")
-    public ResponseEntity<List<Estudiante>> buscarEstudiantesPorCarreraYCiudad(@PathVariable String carrera,@PathVariable String ciudad) {
-        List<Estudiante> estudiantes = estudianteService.buscarEstudiantesPorCarreraYCiudad(carrera, ciudad);
+    public ResponseEntity<List<EstudianteDTO>> buscarEstudiantesPorCarreraYCiudad(@PathVariable String carrera, @PathVariable String ciudad) {
+        List<EstudianteDTO> estudiantes = estudianteService.buscarEstudiantesPorCarreraYCiudad(carrera, ciudad);
         if(estudiantes.isEmpty()){
             return ResponseEntity.noContent().build();
         }
@@ -76,5 +72,11 @@ public class EstudianteControllerJpa {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(estudiantes);
+    }
+
+    @PostMapping()
+    public ResponseEntity<Estudiante> insertarEstudiante(@RequestBody Estudiante estudiante) {
+        Estudiante estudianteNuevo = estudianteService.addEstudiante(estudiante);
+        return ResponseEntity.ok(estudianteNuevo);
     }
 }

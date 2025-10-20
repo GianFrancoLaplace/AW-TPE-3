@@ -4,6 +4,7 @@ import com.arquitecturas.tp3.dto.EstudianteDTO;
 import com.arquitecturas.tp3.entities.Estudiante;
 import com.arquitecturas.tp3.repository.EstudianteRepository;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,10 +12,13 @@ import java.util.List;
 @Service
 @Data
 public class EstudianteService {
+
+    @Autowired
     private EstudianteRepository estudianteRepository;
 
-    public void addEstudiante(Estudiante estudiante) {
+    public Estudiante addEstudiante(Estudiante estudiante) {
         estudianteRepository.save(estudiante);
+        return estudiante;
     }
 
     public List<Estudiante> buscarEstudiantesPorEdad(int edad) {
@@ -25,7 +29,7 @@ public class EstudianteService {
         return estudianteRepository.buscarEstudiantesPorGenero(genero);
     }
 
-    public List<Estudiante> buscarEstudiantesPorCarreraYCiudad(String carrera, String ciudad) {
+    public List<EstudianteDTO> buscarEstudiantesPorCarreraYCiudad(String carrera, String ciudad) {
         return estudianteRepository.buscarEstudiantesPorCarreraYCiudad(carrera, ciudad);
     }
 

@@ -1,0 +1,25 @@
+get everything studients
+http://localhost:8080/api/estudiantes
+
+get by age
+http://localhost:8080/api/estudiantes/edad/20
+
+get by gender
+http://localhost:8080/api/estudiantes/genero/femenino
+
+get by LU
+http://localhost:8080/api/estudiantes/nroLibreta/72976
+
+add new studient
+http://localhost:8080/api/estudiantes
+{
+    "id": 10,
+    "nombre": "Ana",
+    "apellido": "Bellinzona",
+    "edad": 21,
+    "genero": "Femenino",
+    "ciudad": "Buenos Aires",
+    "documento": 46094519,
+    "matriculas": [],
+    "lu": 56789
+}
