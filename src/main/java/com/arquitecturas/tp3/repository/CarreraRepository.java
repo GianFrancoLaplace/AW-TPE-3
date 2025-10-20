@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CarreraRepository extends JpaRepository<Carrera, Integer> {
+public interface CarreraRepository extends JpaRepository<Carrera, Long> {
 
     // f) Recuperar las carreras con estudiantes inscriptos, ordenar por cantidad de inscriptos
     @Query("SELECT new com.arquitecturas.tp3.dto.ReporteCarrerasXInscriptosDTO(" +

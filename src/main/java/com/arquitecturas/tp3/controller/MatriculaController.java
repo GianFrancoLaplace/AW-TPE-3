@@ -1,23 +1,28 @@
 package com.arquitecturas.tp3.controller;
 
+
+import com.arquitecturas.tp3.dto.MatriculaDTO;
+import com.arquitecturas.tp3.dto.MatriculaRequest;
 import com.arquitecturas.tp3.entities.Matricula;
-import com.arquitecturas.tp3.repository.MatriculaRepository;
+import com.arquitecturas.tp3.service.MatriculaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/matriculas")
 public class MatriculaController {
     @Autowired
-    private final MatriculaRepository repository;
+    private MatriculaService matriculaService;
 
-    public MatriculaController(MatriculaRepository repository) {
-        this.repository = repository;
+    public MatriculaController(MatriculaService matriculaService) {
+        this.matriculaService = matriculaService;
     }
 
     // b)
-    @PostMapping("")
-    public Matricula matricular(@RequestBody Matricula matricula) {
-        return repository.save(matricula);
+    @PostMapping
+    public ResponseEntity<Matricula> matricular(@RequestBody MatriculaRequest req) {
+        Matricula m = matriculaService.addMatricula(req);
+        return ResponseEntity.ok(m);
     }
 }

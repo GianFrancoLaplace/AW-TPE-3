@@ -15,7 +15,7 @@ import java.util.List;
 public class Carrera {
 
     @Id
-    private int id;
+    private Long id;
 
     private String nombre;
     private int duracion;

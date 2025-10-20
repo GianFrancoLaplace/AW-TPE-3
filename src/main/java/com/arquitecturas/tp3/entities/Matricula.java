@@ -12,7 +12,7 @@ import lombok.*;
 public class Matricula {
 
     @Id
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "estudiante_id", nullable = false)

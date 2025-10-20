@@ -15,7 +15,7 @@ import java.util.List;
 public class Estudiante {
 
     @Id
-    private int id;
+    private Long id;
 
     private String nombre;
     private String apellido;
