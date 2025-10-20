@@ -25,7 +25,6 @@ public class EstudianteDTO {
         this.genero = e.getGenero();
         this.ciudad = e.getCiudad();
         this.documento = e.getDocumento();
-        this.nroLibreta = e.getNroLibreta();
     }
 
     public String toString(){

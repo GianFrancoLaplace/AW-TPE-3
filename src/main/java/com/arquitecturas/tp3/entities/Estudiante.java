@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "estudiante")
+@Data
 public class Estudiante {
 
     @Id
@@ -22,22 +23,11 @@ public class Estudiante {
     private String genero;
     private String ciudad;
     private int documento;
-    private int nroLibreta;
     //AK
     @Column(name = "LU")
     private int LU;
 
     @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Matricula> matriculas = new ArrayList<>();
-
-    @Override
-    public String toString() {
-        return "Estudiante{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", id=" + id +
-                ", genero='" + genero + '\'' +
-                '}';
-    }
 }
 

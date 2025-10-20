@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/matriculas")
-public class MatriculaControllerJpa {
+public class MatriculaController {
     @Autowired
     private final MatriculaRepository repository;
 
-    public MatriculaControllerJpa(MatriculaRepository repository) {
+    public MatriculaController(MatriculaRepository repository) {
         this.repository = repository;
     }
 

@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
     @Query("SELECT e FROM Estudiante e WHERE e.edad = :edad")
@@ -18,11 +17,11 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
     List<Estudiante> buscarEstudiantesPorGenero(@Param("genero") String genero);
 
     @Query("SELECT m FROM Matricula m JOIN Estudiante e ON m.estudiante.id = e.id WHERE e.ciudad = :ciudad AND m.carrera.nombre = :carrera")
-    List<Estudiante> buscarEstudiantesPorCarreraYCiudad (@Param("carrera") String carrera, @Param("ciudad") String ciudad);
+    List<EstudianteDTO> buscarEstudiantesPorCarreraYCiudad (@Param("carrera") String carrera, @Param("ciudad") String ciudad);
 
     @Query("SELECT e FROM Estudiante e ORDER BY e.edad")
     List<Estudiante> buscarEstudiantesOrderPorEdad();
 
-    @Query("SELECT e FROM Estudiante e WHERE e.nroLibreta = :nroLibreta")
+    @Query("SELECT e FROM Estudiante e WHERE e.LU = :nroLibreta")
     Estudiante buscarEstudianteSegunNumeroLibreta(@Param("nroLibreta") int nroLibreta);
 }
