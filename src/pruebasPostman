@@ -1,4 +1,4 @@
-get everything studients
+get everything students
 http://localhost:8080/api/estudiantes
 
 get by age
@@ -7,12 +7,13 @@ http://localhost:8080/api/estudiantes/edad/20
 get by gender
 http://localhost:8080/api/estudiantes/genero/femenino
 
+get by career y city
 http://localhost:8080/api/estudiantes/carrera/abogacia/ciudad/idvor
 
 get by LU
 http://localhost:8080/api/estudiantes/nroLibreta/72976
 
-add new studient
+add new student
 http://localhost:8080/api/estudiantes
 {
     "id": 10,
